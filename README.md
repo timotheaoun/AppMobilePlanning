@@ -46,7 +46,7 @@ Ce projet est développé avec :
 ```
 - Clone du projet Git hub avec
 ```
-!git clone [https://github.com/TON_UTILISATEUR/TON_REPO](https://github.com/timotheaoun/AppMobilePlanning.git) app
+!git clone https://github.com/timotheaoun/AppMobilePlanning.git app
 %cd app
 ```
 - Initialisation du projet avec buildozer init (cette partie marche sur windows mais il faut installer buildozer donc pas besoin), on uilise `!buildozer init`
@@ -55,12 +55,11 @@ Ce projet est développé avec :
 - Récupération de l'APK avec `/bin/PlanningApp-0.1-debug.apk`
 - Enfin, copie et téléchargement de l'APK avec
   ```bash
-  !cp bin/*.apk /content/
+!cp bin/*.apk /content/
 from google.colab import files
 files.download('/content/PlanningApp-0.1-debug.apk')
 ```
-
-En résumé, le code à mettre dans le notebook de google Colab est:
+**En résumé, le code à mettre dans le notebook de google Colab est **:
 ```bash
 !apt update
 !apt install -y git zip unzip openjdk-17-jdk python3-pip \
