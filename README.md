@@ -25,17 +25,24 @@ Ce projet est développé avec :
 À la fin, je souhaite générer un **APK** installable sur Android, sans dépendre d’un navigateur web.
 
 ---
-## ⚙️ Réalisation: 
-### Sur Pc :
-- Création du fichier main.kv 
-- Création du fichier main.py
-### Sur internet :
-- Import dans Git Hub
-- Utilisation de [google ](https://colab.research.google.com/)
-- installation des packages avec ```bash !apt update
+## ⚙️ Réalisation:
+
+### 💻 Sur PC :
+- Création du fichier `main.kv`
+- Création du fichier `main.py`
+
+### 🌐 Sur internet :
+- Import dans **GitHub**
+- Utilisation de [Google Colab](https://colab.research.google.com/)
+- Installation des packages avec :
+
+```bash
+!apt update
 !apt install -y git zip unzip openjdk-17-jdk python3-pip \
   build-essential libssl-dev libffi-dev python3-dev \
   libncurses5-dev libncursesw5-dev libtinfo5 cmake
+
 !pip install kivy buildozer cython==0.29.21
+
 ---
 💡 *Projet personnel, évolutif, et orienté vers une meilleure gestion du temps et du focus.*
