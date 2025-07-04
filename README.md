@@ -37,7 +37,7 @@ Ce projet est développé avec :
 - Utilisation de [Google Colab](https://colab.research.google.com/)
 - Installation des packages avec :
 
-<code>bash
+<code>
 !apt update
 !apt install -y git zip unzip openjdk-17-jdk python3-pip \
   build-essential libssl-dev libffi-dev python3-dev \
@@ -48,7 +48,7 @@ Ce projet est développé avec :
 
 - Clone du projet GitHub avec :
 
-<code>bash
+<code>
 !git clone https://github.com/timotheaoun/AppMobilePlanning.git app
 %cd app
 </code>
