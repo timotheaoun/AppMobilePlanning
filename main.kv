@@ -1,0 +1,185 @@
+#:import Clock kivy.clock.Clock
+
+<MainScreen>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        size_hint_y: None
+        height: '40dp'
+
+        Button:
+            text: '? Hier'
+            on_release: root.go_day(-1)
+
+        Label:
+            id: date_label
+            text: root.date_str
+            font_size: '18sp'
+            halign: 'center'
+            valign: 'middle'
+
+        Button:
+            text: 'Demain ?'
+            on_release: root.go_day(1)
+
+    ScrollView:
+        GridLayout:
+            id: grid
+            cols: 1
+            size_hint_y: None
+            height: self.minimum_height
+            spacing: 5
+
+<TaskButton@Button>:
+    task: {}
+    background_color: (0.8, 1, 0.8, 1)
+
+<TaskPopup>:
+    title: root.task_name
+    size_hint: 0.8, 0.5
+    auto_dismiss: False
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+
+        Label:
+            text: f"[b]{root.task_name}[/b]"
+            markup: True
+            font_size: '20sp'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Label:
+            text: f"De {root.start} à {root.end}"
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        ScrollView:
+            size_hint_y: 0.5
+            Label:
+                text: root.task_desc if root.task_desc else "Pas de description."
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+
+        BoxLayout:
+            size_hint_y: None
+            height: '40dp'
+            spacing: 10
+
+            Button:
+                text: 'Activer mode sans distraction'
+                disabled: not root.distraction_mode
+                on_release:
+                    root.activate_distraction_mode()
+
+            Button:
+                text: 'Fermer'
+                on_release: root.dismiss()
+
+<PlanningPopup>:
+    title: "Planification du lendemain"
+    size_hint: 0.9, 0.8
+    auto_dismiss: False
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+
+        BoxLayout:
+            spacing: 10
+            size_hint_y: None
+            height: '40dp'
+
+            Label:
+                text: "Heure début (HH:MM) :"
+                size_hint_x: None
+                width: '140dp'
+
+            TextInput:
+                id: start_input
+                multiline: False
+                size_hint_x: None
+                width: '80dp'
+
+            Label:
+                text: "Heure fin (HH:MM) :"
+                size_hint_x: None
+                width: '140dp'
+
+            TextInput:
+                id: end_input
+                multiline: False
+                size_hint_x: None
+                width: '80dp'
+
+        TextInput:
+            id: name_input
+            multiline: False
+            hint_text: "Nom de la tâche (ex: sport, lecture, travail...)"
+
+        TextInput:
+            id: desc_input
+            multiline: True
+            hint_text: "Description (laisser vide si mot-clé reconnu)"
+
+        BoxLayout:
+            size_hint_y: None
+            height: '40dp'
+            padding: [0,10,0,0]
+            spacing: 10
+
+            CheckBox:
+                id: distraction_checkbox
+                size_hint_x: None
+                width: '40dp'
+
+            Label:
+                text: "Activer mode sans distraction"
+
+        BoxLayout:
+            size_hint_y: None
+            height: '40dp'
+            spacing: 10
+
+            Button:
+                text: "Ajouter tâche"
+                on_release: root.add_task()
+
+            Button:
+                text: "Annuler"
+                on_release: root.dismiss()
+
+<BilanPopup>:
+    title: "Bilan de la journée"
+    size_hint: 0.8, 0.6
+    auto_dismiss: False
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+
+        Label:
+            text: "Racontez votre journée :"
+            size_hint_y: None
+            height: '30dp'
+
+        TextInput:
+            id: bilan_text
+            multiline: True
+
+        BoxLayout:
+            size_hint_y: None
+            height: '40dp'
+            spacing: 10
+
+            Button:
+                text: "Valider"
+                on_release: root.save_bilan()
+
+            Button:
+                text: "Annuler"
+                on_release: root.dismiss()
