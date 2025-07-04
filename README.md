@@ -78,7 +78,7 @@ files.download('/content/PlanningApp-0.1-debug.apk')
 
 !git clone https://github.com/timotheaoun/AppMobilePlanning.git app
 %cd app
-
+!buildozer init
 !buildozer -v android debug
 
 !cp bin/*.apk /content/
