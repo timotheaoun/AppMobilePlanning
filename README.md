@@ -36,53 +36,39 @@ Ce projet est développé avec :
 - Import dans **GitHub**
 - Utilisation de [Google Colab](https://colab.research.google.com/)
 - Installation des packages avec :
-
-<code>
+```
 !apt update
 !apt install -y git zip unzip openjdk-17-jdk python3-pip \
   build-essential libssl-dev libffi-dev python3-dev \
   libncurses5-dev libncursesw5-dev libtinfo5 cmake
 
 !pip install kivy buildozer cython==0.29.21
-</code>
-
+```
 - Clone du projet GitHub avec :
-
-<code>
+```
 !git clone https://github.com/timotheaoun/AppMobilePlanning.git app
 %cd app
-</code>
-
-- Initialisation du projet avec Buildozer (optionnel si tu as déjà un fichier `buildozer.spec`) :
-
-<code>
-!buildozer init
-</code>
-
-- Modification du fichier `buildozer.spec` selon besoin
+```
+- Initialisation du projet avec ```Buildozer init ```(cette partie marche sur windows mais il faut installer buildozer donc pas besoin)
+- Modification du fichier `buildozer.spec` 
 - Compilation en APK Android avec :
-
-<code>
+```
 !buildozer -v android debug
-</code>
-
+```
 > Cette étape peut être très longue 😴
-
 - Récupération de l'APK généré (par défaut dans `bin/PlanningApp-0.1-debug.apk`)
-
 - Copie et téléchargement de l’APK avec :
-
-<code>
+```
 !cp bin/*.apk /content/
 from google.colab import files
 files.download('/content/PlanningApp-0.1-debug.apk')
-</code>
+```
 
 ---
 
 ## Résumé du code à placer dans le notebook Google Colab :
 
-<code>
+```
 !apt update
 !apt install -y git zip unzip openjdk-17-jdk python3-pip \
   build-essential libssl-dev libffi-dev python3-dev \
@@ -98,8 +84,7 @@ files.download('/content/PlanningApp-0.1-debug.apk')
 !cp bin/*.apk /content/
 from google.colab import files
 files.download('/content/PlanningApp-0.1-debug.apk')
-</code>
-
+```
 ---
 
 💡 *Projet personnel, évolutif, et orienté vers une meilleure gestion du temps et du focus.*
