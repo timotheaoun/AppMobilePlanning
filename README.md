@@ -1,6 +1,6 @@
 # 📅 PlanningApp – Organisateur personnel intelligent
 
-Bienvenue dans **PlanningApp**, une application de planification journalière que je développe pour améliorer ma productivité pendant mes vacances (application pour le moment bancale car c'est mon premier projet dans lequel je crée une appli mobile)
+Bienvenue dans **PlanningApp**, une application de planification journalière que je développe pour améliorer ma productivité pendant mes vacances (application pour le moment bancale car c'est mon premier projet dans lequel je crée une appli mobile), j'utilise git hub car sur mon PC windows, je ne peux pas utiliser Buildozer donc je vais tout faire depuis Google Colab (Linux virtuel gratuit) et importer ce dépôt Git hub.
 
 ## 🎯 Objectif du projet
 
