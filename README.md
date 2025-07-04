@@ -55,14 +55,14 @@ Ce projet est développé avec :
 
 - Initialisation du projet avec Buildozer (optionnel si tu as déjà un fichier `buildozer.spec`) :
 
-<code>bash
+<code>
 !buildozer init
 </code>
 
 - Modification du fichier `buildozer.spec` selon besoin
 - Compilation en APK Android avec :
 
-<code>bash
+<code>
 !buildozer -v android debug
 </code>
 
@@ -72,7 +72,7 @@ Ce projet est développé avec :
 
 - Copie et téléchargement de l’APK avec :
 
-<code>bash
+<code>
 !cp bin/*.apk /content/
 from google.colab import files
 files.download('/content/PlanningApp-0.1-debug.apk')
@@ -82,7 +82,7 @@ files.download('/content/PlanningApp-0.1-debug.apk')
 
 ## Résumé du code à placer dans le notebook Google Colab :
 
-<code>bash
+<code>
 !apt update
 !apt install -y git zip unzip openjdk-17-jdk python3-pip \
   build-essential libssl-dev libffi-dev python3-dev \
