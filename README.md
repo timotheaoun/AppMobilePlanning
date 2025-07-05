@@ -92,7 +92,7 @@ files.download('/content/PlanningApp-0.1-debug.apk')
 ---
 
 ---
-#Modification code
+## Modification code
 Les étapes que j'ai faites ont générées une erreur, actualisation :
 ```
 !apt update
