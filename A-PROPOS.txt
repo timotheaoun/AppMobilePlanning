@@ -1,0 +1,6 @@
+L'application a été conçue en quelques jours
+Elle est donc simple, incomplète, avec un design négligé
+Le but est uniquement de pouvoir stucturer de manière simple mes vacances
+
+---
+Potentielles améliorations: [oui]
