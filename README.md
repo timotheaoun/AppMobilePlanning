@@ -88,3 +88,46 @@ files.download('/content/PlanningApp-0.1-debug.apk')
 ---
 
 💡 *Projet personnel, évolutif, et orienté vers une meilleure gestion du temps et du focus.*
+
+---
+
+---
+#Modification code
+Les étapes que j'ai faites ont générées une erreur, actualisation :
+```
+!apt update
+!apt install -y git zip unzip openjdk-8-jdk python3-pip \
+  build-essential libssl-dev libffi-dev python3-dev \
+  libncurses5-dev libncursesw5-dev libtinfo5 cmake
+
+# Installer cython compatible et buildozer/kivy
+!pip install --upgrade pip
+!pip install cython==0.29.21 buildozer kivy
+
+# Cloner ton repo
+!git clone https://github.com/timotheaoun/AppMobilePlanning.git app
+%cd app
+
+# Nettoyer si build précédente
+!buildozer android clean
+!rm -rf ~/.buildozer/android/platform
+
+# Initialiser buildozer.spec (s’il n’existe pas)
+!buildozer init
+
+# Modifier buildozer.spec pour forcer ndk21e (optionnel mais conseillé)
+!sed -i 's/android.ndk = .*/android.ndk = 21e/' buildozer.spec
+!sed -i 's/android.arch = .*/android.arch = armeabi-v7a/' buildozer.spec
+!sed -i 's/# (int) Android API to use/android.api = 31/' buildozer.spec
+!sed -i 's/# (int) Minimum API android.minapi = 21/' buildozer.spec
+
+# Builder apk debug
+!buildozer -v android debug
+
+# Copier apk et proposer téléchargement
+!cp bin/*.apk /content/
+from google.colab import files
+files.download('/content/PlanningApp-0.1-debug.apk')
+```
+
+
